@@ -116,6 +116,8 @@ func PreMasterSecret(publicKey, privateKey []byte, curve elliptic.Curve) ([]byte
 		ec = ecdh.P256()
 	case elliptic.P384:
 		ec = ecdh.P384()
+	case elliptic.P521:
+		ec = ecdh.P521()
 	default:
 		return nil, errInvalidNamedCurve
 	}

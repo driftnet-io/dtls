@@ -28,6 +28,7 @@ import (
 	"time"
 
 	"github.com/driftnet-io/dtls/v3"
+	dtlsCurve "github.com/driftnet-io/dtls/v3/pkg/crypto/elliptic"
 	"github.com/driftnet-io/dtls/v3/pkg/crypto/selfsign"
 	"github.com/driftnet-io/dtls/v3/pkg/protocol/extension"
 	"github.com/driftnet-io/dtls/v3/pkg/protocol/handshake"
@@ -1083,6 +1084,54 @@ func testPionE2ESimpleServerHelloHook(t *testing.T, server, client func(*comm), 
 		defer comm.cleanup(t)
 		comm.assert(t)
 	})
+}
+
+func testPionE2EEllipticCurves(t *testing.T, server, client func(*comm)) {
+	t.Helper()
+	lim := test.TimeOut(time.Second * 30)
+	defer lim.Stop()
+
+	report := test.CheckRoutines(t)
+	defer report()
+
+	curves := []dtlsCurve.Curve{
+		dtlsCurve.X25519,
+		dtlsCurve.P256,
+		dtlsCurve.P384,
+		dtlsCurve.P521,
+	}
+
+	for _, curve := range curves {
+		curve := curve
+		t.Run(curve.String(), func(t *testing.T) {
+			ctx, cancel := context.WithTimeout(context.Background(), 2*time.Second)
+			defer cancel()
+
+			cert, err := selfsign.GenerateSelfSignedWithDNS("localhost")
+			assert.NoError(t, err)
+
+			clientOpts := []dtls.ClientOption{
+				dtls.WithCertificates(cert),
+				dtls.WithCipherSuites(dtls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256),
+				dtls.WithEllipticCurves(curve),
+				dtls.WithInsecureSkipVerify(true),
+			}
+			serverOpts := []dtls.ServerOption{
+				dtls.WithCertificates(cert),
+				dtls.WithCipherSuites(dtls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256),
+				dtls.WithEllipticCurves(curve),
+				dtls.WithInsecureSkipVerify(true),
+			}
+			serverPort := randomPort(t)
+			comm := newComm(ctx, clientOpts, serverOpts, serverPort, server, client)
+			defer comm.cleanup(t)
+			comm.assert(t)
+		})
+	}
+}
+
+func TestPionE2EEllipticCurves(t *testing.T) {
+	testPionE2EEllipticCurves(t, serverPion, clientPion)
 }
 
 func TestPionE2ESimple(t *testing.T) {

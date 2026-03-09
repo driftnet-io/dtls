@@ -277,22 +277,33 @@ func TestPreMasterSecret_NewPublicKeyError(t *testing.T) {
 	assert.Error(t, err) // error from ec.NewPublicKey
 }
 
-func TestPreMasterSecret_P256_Success_CaseHit(t *testing.T) {
-	// P-256 case branch and confirm success (non-empty shared secret).
-	ec := ecdh.P256()
-	aliceSK, err := ec.GenerateKey(rand.Reader)
+func testPreMasterSecretSuccess(t *testing.T, curve elliptic.Curve, ecdhCurve ecdh.Curve) {
+	t.Helper()
+
+	aliceSK, err := ecdhCurve.GenerateKey(rand.Reader)
 	assert.NoError(t, err)
 
-	bobSK, err := ec.GenerateKey(rand.Reader)
+	bobSK, err := ecdhCurve.GenerateKey(rand.Reader)
 	assert.NoError(t, err)
 
-	// Expected shared secret using ecdh directly.
 	exp, err := aliceSK.ECDH(bobSK.PublicKey())
 	assert.NoError(t, err)
 	assert.NotEmpty(t, exp)
 
-	secret, err := PreMasterSecret(bobSK.PublicKey().Bytes(), aliceSK.Bytes(), elliptic.P256)
+	secret, err := PreMasterSecret(bobSK.PublicKey().Bytes(), aliceSK.Bytes(), curve)
 	assert.NoError(t, err)
 	assert.NotEmpty(t, secret)
-	assert.Equal(t, exp, secret) // exact match
+	assert.Equal(t, exp, secret)
+}
+
+func TestPreMasterSecret_P256_Success_CaseHit(t *testing.T) {
+	testPreMasterSecretSuccess(t, elliptic.P256, ecdh.P256())
+}
+
+func TestPreMasterSecret_P384_Success(t *testing.T) {
+	testPreMasterSecretSuccess(t, elliptic.P384, ecdh.P384())
+}
+
+func TestPreMasterSecret_P521_Success(t *testing.T) {
+	testPreMasterSecretSuccess(t, elliptic.P521, ecdh.P521())
 }
