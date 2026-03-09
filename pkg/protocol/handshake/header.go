@@ -6,7 +6,7 @@ package handshake
 import (
 	"encoding/binary"
 
-	"github.com/pion/dtls/v3/internal/util"
+	"github.com/driftnet-io/dtls/v3/internal/util"
 )
 
 // HeaderLength msg_len for Handshake messages assumes an extra

@@ -10,8 +10,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/pion/dtls/v3/pkg/crypto/elliptic"
-	"github.com/pion/dtls/v3/pkg/protocol/handshake"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/elliptic"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/handshake"
 	"github.com/pion/logging"
 )
 

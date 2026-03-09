@@ -16,10 +16,10 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/pion/dtls/v3/pkg/crypto/elliptic"
-	"github.com/pion/dtls/v3/pkg/crypto/hash"
-	"github.com/pion/dtls/v3/pkg/crypto/signature"
-	"github.com/pion/dtls/v3/pkg/crypto/signaturehash"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/elliptic"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/hash"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/signature"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/signaturehash"
 )
 
 type ecdsaSignature struct {

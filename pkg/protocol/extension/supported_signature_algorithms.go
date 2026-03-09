@@ -4,7 +4,7 @@
 package extension
 
 import (
-	"github.com/pion/dtls/v3/pkg/crypto/signaturehash"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/signaturehash"
 )
 
 // SupportedSignatureAlgorithms allows a Client/Server to

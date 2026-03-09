@@ -4,8 +4,8 @@
 package ciphersuite
 
 import (
-	"github.com/pion/dtls/v3/pkg/crypto/ciphersuite"
-	"github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/ciphersuite"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
 )
 
 // NewTLSEcdheEcdsaWithAes128Ccm constructs a TLS_ECDHE_ECDSA_WITH_AES_128_CCM Cipher.

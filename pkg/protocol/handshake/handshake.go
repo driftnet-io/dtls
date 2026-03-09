@@ -5,9 +5,9 @@
 package handshake
 
 import (
-	"github.com/pion/dtls/v3/internal/ciphersuite/types"
-	"github.com/pion/dtls/v3/internal/util"
-	"github.com/pion/dtls/v3/pkg/protocol"
+	"github.com/driftnet-io/dtls/v3/internal/ciphersuite/types"
+	"github.com/driftnet-io/dtls/v3/internal/util"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol"
 )
 
 // Type is the unique identifier for each handshake message

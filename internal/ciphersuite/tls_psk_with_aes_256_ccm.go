@@ -4,8 +4,8 @@
 package ciphersuite
 
 import (
-	"github.com/pion/dtls/v3/pkg/crypto/ciphersuite"
-	"github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/ciphersuite"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
 )
 
 // NewTLSPskWithAes256Ccm returns the TLS_PSK_WITH_AES_256_CCM CipherSuite.

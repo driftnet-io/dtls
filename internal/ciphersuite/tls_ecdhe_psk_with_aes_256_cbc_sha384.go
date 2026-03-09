@@ -9,10 +9,10 @@ import (
 	"hash"
 	"sync/atomic"
 
-	"github.com/pion/dtls/v3/pkg/crypto/ciphersuite"
-	"github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
-	"github.com/pion/dtls/v3/pkg/crypto/prf"
-	"github.com/pion/dtls/v3/pkg/protocol/recordlayer"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/ciphersuite"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/prf"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/recordlayer"
 )
 
 // TLSEcdhePskWithAes256CbcSha384 implements the TLS_ECDHE_PSK_WITH_AES_256_CBC_SHA384 CipherSuite.

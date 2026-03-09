@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pion/dtls/v3"
-	"github.com/pion/dtls/v3/pkg/crypto/selfsign"
-	dtlsnet "github.com/pion/dtls/v3/pkg/net"
+	"github.com/driftnet-io/dtls/v3"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/selfsign"
+	dtlsnet "github.com/driftnet-io/dtls/v3/pkg/net"
 	transportTest "github.com/pion/transport/v4/test"
 	"github.com/stretchr/testify/assert"
 )

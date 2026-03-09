@@ -4,7 +4,7 @@
 package extension
 
 import (
-	"github.com/pion/dtls/v3/pkg/protocol"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol"
 	"golang.org/x/crypto/cryptobyte"
 )
 

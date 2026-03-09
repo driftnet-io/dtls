@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/pion/dtls/v3/pkg/crypto/selfsign"
+	"github.com/driftnet-io/dtls/v3/pkg/crypto/selfsign"
 	"github.com/stretchr/testify/assert"
 )
 

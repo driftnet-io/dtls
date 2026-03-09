@@ -4,9 +4,9 @@
 package dtls
 
 import (
-	"github.com/pion/dtls/v3/pkg/protocol"
-	"github.com/pion/dtls/v3/pkg/protocol/handshake"
-	"github.com/pion/dtls/v3/pkg/protocol/recordlayer"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/handshake"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/recordlayer"
 )
 
 const (

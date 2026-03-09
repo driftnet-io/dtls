@@ -3,7 +3,7 @@
 
 package ciphersuite
 
-import "github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
+import "github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
 
 // TLSEcdhePskWithChacha20Poly1305Sha256 implements the TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_SHA256 CipherSuite.
 type TLSEcdhePskWithChacha20Poly1305Sha256 struct {

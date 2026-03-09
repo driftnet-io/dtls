@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pion/dtls/v3/pkg/protocol"
-	"github.com/pion/dtls/v3/pkg/protocol/extension"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/extension"
 	"github.com/stretchr/testify/assert"
 )
 

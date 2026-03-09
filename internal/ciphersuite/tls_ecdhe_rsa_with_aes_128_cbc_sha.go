@@ -3,7 +3,7 @@
 
 package ciphersuite
 
-import "github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
+import "github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
 
 // TLSEcdheRsaWithAes128CbcSha implements the TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA CipherSuite.
 type TLSEcdheRsaWithAes128CbcSha struct {

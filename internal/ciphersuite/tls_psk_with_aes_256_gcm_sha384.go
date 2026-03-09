@@ -3,7 +3,7 @@
 
 package ciphersuite
 
-import "github.com/pion/dtls/v3/pkg/crypto/clientcertificate"
+import "github.com/driftnet-io/dtls/v3/pkg/crypto/clientcertificate"
 
 // TLSPskWithAes256GcmSha384 implements the TLS_PSK_WITH_AES_256_GCM_SHA384 CipherSuite.
 type TLSPskWithAes256GcmSha384 struct {

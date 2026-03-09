@@ -4,7 +4,7 @@
 package dtls
 
 import (
-	"github.com/pion/dtls/v3/pkg/protocol/recordlayer"
+	"github.com/driftnet-io/dtls/v3/pkg/protocol/recordlayer"
 )
 
 type packet struct {
