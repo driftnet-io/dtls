@@ -106,7 +106,7 @@ func (m *MessageCertificateRequest) Unmarshal(data []byte) error { //nolint:cycl
 		var alg signaturehash.Algorithm
 		err := alg.Unmarshal(tls.SignatureScheme(scheme))
 		if err != nil {
-			return errInvalidSignHashAlgorithm
+			continue
 		}
 		m.SignatureHashAlgorithms = append(m.SignatureHashAlgorithms, alg)
 	}
